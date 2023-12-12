@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CalculatorApp.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Entry
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4" />
+        
+        <!--1 ROW-->
+        <Button Text="x^2" Grid.Row="2" Grid.Column="0" Clicked="OperationClick"/>
+        <Button Text="sqrt" Grid.Row="2" Grid.Column="1" Clicked="OperationClick"/>
+        <Button Text="CE" Grid.Row="2" Grid.Column="2" Clicked="OperationClick"/>
+        <Button Text="/" Grid.Row="2" Grid.Column="3" Clicked="OperationClick"/>
+                
+        <!--2 ROW-->
+        <Button Text="7" Grid.Row="3" Grid.Column="0" Clicked="NumberClick"/>
+        <Button Text="8" Grid.Row="3" Grid.Column="1" Clicked="NumberClick"/>
+        <Button Text="9" Grid.Row="3" Grid.Column="2" Clicked="NumberClick"/>
+        <Button Text="x" Grid.Row="3" Grid.Column="3" Clicked="OperationClick"/>
+
+        <!--3 ROW-->
+        <Button Text="4" Grid.Row="4" Grid.Column="0" Clicked="NumberClick"/>
+        <Button Text="5" Grid.Row="4" Grid.Column="1" Clicked="NumberClick"/>
+        <Button Text="6" Grid.Row="4" Grid.Column="2" Clicked="NumberClick"/>
+        <Button Text="-" Grid.Row="4" Grid.Column="3" Clicked="OperationClick"/>
+
+        <!--4 ROW-->
+        <Button Text="1" Grid.Row="5" Grid.Column="0" Clicked="NumberClick"/>
+        <Button Text="2" Grid.Row="5" Grid.Column="1" Clicked="NumberClick"/>
+        <Button Text="3" Grid.Row="5" Grid.Column="2" Clicked="NumberClick"/>
+        <Button Text="+" Grid.Row="5" Grid.Column="3" Clicked="OperationClick"/>
+
+        <!--5 ROW-->
+        <Button Text="blank" Grid.Row="6" Grid.Column="0"/>
+        <Button Text="0" Grid.Row="6" Grid.Column="1"/>
+        <Button Text="blank" Grid.Row="6" Grid.Column="2"/>
+        <Button Text="=" Grid.Row="6" Grid.Column="3" Clicked="EqualsClick"/>
+    </Grid>
+
+</ContentPage>
