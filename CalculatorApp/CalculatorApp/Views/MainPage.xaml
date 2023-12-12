@@ -4,58 +4,195 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <ContentPage.Resources>
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="20" />
+        </Style>
+    </ContentPage.Resources>
 
+    <Grid Padding="10,20,10,20" BackgroundColor="Orange">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Entry
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="4" />
-        
-        <!--1 ROW-->
-        <Button Text="x^2" Grid.Row="2" Grid.Column="0" Clicked="OperationClick"/>
-        <Button Text="sqrt" Grid.Row="2" Grid.Column="1" Clicked="OperationClick"/>
-        <Button Text="CE" Grid.Row="2" Grid.Column="2" Clicked="OperationClick"/>
-        <Button Text="/" Grid.Row="2" Grid.Column="3" Clicked="OperationClick"/>
-                
-        <!--2 ROW-->
-        <Button Text="7" Grid.Row="3" Grid.Column="0" Clicked="NumberClick"/>
-        <Button Text="8" Grid.Row="3" Grid.Column="1" Clicked="NumberClick"/>
-        <Button Text="9" Grid.Row="3" Grid.Column="2" Clicked="NumberClick"/>
-        <Button Text="x" Grid.Row="3" Grid.Column="3" Clicked="OperationClick"/>
+        <Frame
+            Grid.Row="0"
+            BackgroundColor="White"
+            CornerRadius="20">
+            <StackLayout
+                x:Name="GridLayout"
+                Background="red"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Grid x:Name="VerticalGridControll">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
 
-        <!--3 ROW-->
-        <Button Text="4" Grid.Row="4" Grid.Column="0" Clicked="NumberClick"/>
-        <Button Text="5" Grid.Row="4" Grid.Column="1" Clicked="NumberClick"/>
-        <Button Text="6" Grid.Row="4" Grid.Column="2" Clicked="NumberClick"/>
-        <Button Text="-" Grid.Row="4" Grid.Column="3" Clicked="OperationClick"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
 
-        <!--4 ROW-->
-        <Button Text="1" Grid.Row="5" Grid.Column="0" Clicked="NumberClick"/>
-        <Button Text="2" Grid.Row="5" Grid.Column="1" Clicked="NumberClick"/>
-        <Button Text="3" Grid.Row="5" Grid.Column="2" Clicked="NumberClick"/>
-        <Button Text="+" Grid.Row="5" Grid.Column="3" Clicked="OperationClick"/>
+                    <StackLayout>
+                        <Label x:Name="OutputEquation" />
+                        <Entry
+                            x:Name="Output"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4" />
+                    </StackLayout>
 
-        <!--5 ROW-->
-        <Button Text="blank" Grid.Row="6" Grid.Column="0"/>
-        <Button Text="0" Grid.Row="6" Grid.Column="1"/>
-        <Button Text="blank" Grid.Row="6" Grid.Column="2"/>
-        <Button Text="=" Grid.Row="6" Grid.Column="3" Clicked="EqualsClick"/>
+                    <!--  1 ROW  -->
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Clicked="OperationClick"
+                        Text="x^2" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Clicked="OperationClick"
+                        Text="sqrt" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Clicked="ClearClick"
+                        Text="C" />
+                    <Button
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="/" />
+
+                    <!--  2 ROW  -->
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Clicked="NumberClick"
+                        Text="7" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="8" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Clicked="NumberClick"
+                        Text="9" />
+                    <Button
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="x" />
+
+                    <!--  3 ROW  -->
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Clicked="NumberClick"
+                        Text="4" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="5" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        Clicked="NumberClick"
+                        Text="6" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="-" />
+
+                    <!--  4 ROW  -->
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Clicked="NumberClick"
+                        Text="1" />
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="2" />
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="2"
+                        Clicked="NumberClick"
+                        Text="3" />
+                    <Button
+                        Grid.Row="5"
+                        Grid.Column="3"
+                        Clicked="OperationClick"
+                        Text="+" />
+
+                    <!--  5 ROW  -->
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Clicked="OperationClick"
+                        Text="1/x" />
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Clicked="NumberClick"
+                        Text="0" />
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        Clicked="CommaClick"
+                        Text="," />
+                    <Button
+                        Grid.Row="6"
+                        Grid.Column="3"
+                        Clicked="EqualsClick"
+                        Text="=" />
+                </Grid>
+
+                <Grid x:Name="HorizontalGridControll">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <StackLayout>
+                        <Label x:Name="OutputEquation_Label" />
+                        <Entry
+                            x:Name="Output_Label"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="4" />
+                    </StackLayout>
+
+                    <Label Text="Esa" />
+                </Grid>
+            </StackLayout>
+        </Frame>
     </Grid>
 
 </ContentPage>
